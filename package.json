@@ -1,13 +1,21 @@
 {
   "name": "pokedex",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pokedex in vanilla.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sebastian Gil <shiuxcode@gmail.com>",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rokujs/pokedex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rokujs/pokedex/issues"
+  },
+  "homepage": "https://github.com/rokujs/pokedex#readme"
 }
