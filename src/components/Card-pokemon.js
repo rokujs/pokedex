@@ -5,16 +5,20 @@ class CardPokemon extends HTMLElement {
   }
 
   connectedCallback() {
-    const namePokemon = this.getAttribute("name");
-    const imagePokemon = this.getAttribute("image");
-    const typePokemon = this.getAttribute("type");
+    const name = this.getAttribute("name");
+    const image = this.getAttribute("image");
+    const type = this.getAttribute("type");
 
     this.root.innerHTML += `
-    <div class="container_pokemon">
-      <h3 class="title_pokemon">${namePokemon}</h3>
-      <div class="container_img"><img src="${imagePokemon}"></div>
-      <div class="description_pokemon"><span class="type_pokemon">Type: </span><span class="type_pokemon"
-          id="type">${typePokemon}</span></div>
+    <div class="container_pokemon type_${type}">
+        <h3 class="title_pokemon">${name}</h3>
+        <div class="container_img">
+          <img src="${image}">
+        </div>
+        <div class="description_pokemon">
+        <span class="type_pokemon"><b>Type: </b></span><span class="type_pokemon" id="type">${type}
+        </span>
+        </div>
       </div>
     `;
   }

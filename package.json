@@ -4,12 +4,12 @@
   "description": "Pokedex in vanilla.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack serve --config webpack.dev.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [],
   "author": "Sebastian Gil <shiuxcode@gmail.com>",
   "license": "ISC",
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/rokujs/pokedex.git"
@@ -17,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/rokujs/pokedex/issues"
   },
-  "homepage": "https://github.com/rokujs/pokedex#readme"
+  "homepage": "https://github.com/rokujs/pokedex#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.0.0",
+    "style-loader": "^3.0.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
 }

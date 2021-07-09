@@ -1,0 +1,238 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
+.header__title {
+  font-size: 6rem;
+  color: black;
+}
+
+.searched {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+.searched__input {
+  padding: 1rem;
+  width: 40vw;
+  border: none;
+  height: inherit;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid orange;
+  background-color: #fff;
+  font-size: 1.6rem;
+}
+
+.searched__input:focus-visible {
+  border: 3px solid orange;
+  outline: none;
+}
+
+.searched__button {
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: none;
+  height: inherit;
+  border-radius: 0 10px 10px 0;
+  background-color: orange;
+  color: #fff;
+  font-weight: bold;
+}
+
+.searched__button:focus-visible {
+  outline: none;
+}
+
+.container {
+  margin: 3rem;
+  margin-top: 10rem;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-rows: auto;
+}
+
+.container_pokemon {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  justify-self: center;
+}
+
+.container_pokemon:hover {
+  animation-name: card_pokemon;
+  animation-duration: 0.25s;
+  animation-delay: 0;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes card_pokemon {
+  from {
+    border-radius: 0.5rem;
+  }
+  to {
+    border-radius: 2rem;
+  }
+}
+
+.container_pokemon > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container_img {
+  background-color: white;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+  height: 15rem;
+  padding: 1rem;
+}
+
+.container_img img {
+  height: inherit;
+  display: block;
+  margin: auto;
+}
+
+.title_pokemon {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.description_pokemon {
+  text-align: center;
+  padding: 1rem;
+}
+
+.type_pokemon {
+  font-size: 1.6rem;
+}
+
+.type_fire {
+  background-color: #f25c05;
+}
+.type_normal {
+  background-color: #e8c271;
+}
+.type_water {
+  background-color: #05898f;
+}
+.type_grass {
+  background-color: #94bf36;
+}
+.type_electric {
+  background-color: #f2e205;
+}
+.type_ice {
+  background-color: #5c8ef2;
+}
+.type_fighting {
+  background-color: #8c0404;
+}
+.type_poison {
+  background-color: #9a359e;
+}
+.type_ground {
+  background-color: #7e582e;
+}
+.type_flying {
+  background-color: #73d99f;
+}
+.type_psychic {
+  background-color: #191919;
+}
+.type_bug {
+  background-color: #f2e85e;
+}
+.type_rock {
+  background-color: #40312c;
+}
+.type_ghost {
+  background-color: #3b7d8c;
+}
+.type_dark {
+  background-color: #0a2473;
+}
+.type_dragon {
+  background-color: #bf3f34;
+}
+.type_steel {
+  background-color: #202833;
+}
+.type_fairy {
+  background-color: #bcbf56;
+}
+
+/* hover of pokemon image */
+
+.container_pokemon:hover .img_fire {
+  filter: drop-shadow(0 0 0.8rem#f25c05);
+}
+.container_pokemon:hover .img_normal {
+  filter: drop-shadow(0 0 0.8rem#e8c271);
+}
+.container_pokemon:hover .img_water {
+  filter: drop-shadow(0 0 0.8rem#05898f);
+}
+.container_pokemon:hover .img_grass {
+  filter: drop-shadow(0 0 0.8rem#94bf36);
+}
+.container_pokemon:hover .img_electric {
+  filter: drop-shadow(0 0 0.8rem#f2e205);
+}
+.container_pokemon:hover .img_ice {
+  filter: drop-shadow(0 0 0.8rem#5c8ef2);
+}
+.container_pokemon:hover .img_fighting {
+  filter: drop-shadow(0 0 0.8rem#8c0404);
+}
+.container_pokemon:hover .img_poison {
+  filter: drop-shadow(0 0 0.8rem#9a359e);
+}
+.container_pokemon:hover .img_ground {
+  filter: drop-shadow(0 0 0.8rem#7e582e);
+}
+.container_pokemon:hover .img_flying {
+  filter: drop-shadow(0 0 0.8rem#73d99f);
+}
+.container_pokemon:hover .img_psychic {
+  filter: drop-shadow(0 0 0.8rem#191919);
+}
+.container_pokemon:hover .img_bug {
+  filter: drop-shadow(0 0 0.8rem#f2e85e);
+}
+.container_pokemon:hover .img_rock {
+  filter: drop-shadow(0 0 0.8rem#40312c);
+}
+.container_pokemon:hover .img_ghost {
+  filter: drop-shadow(0 0 0.8rem#3b7d8c);
+}
+.container_pokemon:hover .img_dark {
+  filter: drop-shadow(0 0 0.8rem#0a2473);
+}
+.container_pokemon:hover .img_dragon {
+  filter: drop-shadow(0 0 0.8rem#bf3f34);
+}
+.container_pokemon:hover .img_steel {
+  filter: drop-shadow(0 0 0.8rem#202833);
+}
+.container_pokemon:hover .img_fairy {
+  filter: drop-shadow(0 0 0.8rem#bcbf56);
+}

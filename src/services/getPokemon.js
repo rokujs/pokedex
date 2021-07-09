@@ -9,3 +9,5 @@ async function getPokemon(id) {
     console.error(error);
   }
 }
+
+export default getPokemon;
