@@ -1,8 +1,8 @@
-const api = "https://pokeapi.co/api/v2/";
+import { API } from './setting'
 
-async function getPokemon(id) {
+async function getPokemon({ id = 1 }) {
   try {
-    const response = await fetch(`${api}pokemon/${id}/`);
+    const response = await fetch(`${API}/pokemon/${id}/`);
     const data = await response.json();
     return data;
   } catch (error) {

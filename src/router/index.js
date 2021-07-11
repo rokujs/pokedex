@@ -1,5 +1,7 @@
 import Header from "../components/Header";
 import Form from "../components/Form";
+import ResultsPokemon from '../components/ResultPokemon'
+
 import Home from "../pages/Home";
 import Pokemon from "../pages/Pokemon";
 import ErrorPage from "../pages/ErrorPage";
@@ -18,6 +20,7 @@ async function router() {
   const form = null || document.getElementById("form");
   const header = null || document.getElementById("header");
   const main = null || document.getElementById("Main");
+  const results = null || document.getElementById("results");
 
   header.innerHTML = Header();
   form.innerHTML = Form()
@@ -37,9 +40,9 @@ async function router() {
 
 export default router;
 
-function Search(evt) {
+async function Search(evt) {
   evt.preventDefault()
-  console.log(keyword);
+  results.innerHTML = await ResultsPokemon({ keyword })
 }
 
 function handleChange(evt) {

@@ -59,6 +59,17 @@ body {
   outline: none;
 }
 
+#results {
+  display: flex;
+  margin: 3rem;
+  justify-content: center;
+}
+
+.text__error {
+  color: black;
+  font-size: 3rem;
+}
+
 .container {
   margin: 3rem;
   margin-top: 10rem;

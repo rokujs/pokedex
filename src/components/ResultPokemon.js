@@ -1,20 +1,15 @@
 import getPokemon from "../services/getPokemon";
 
-async function Home() {
+async function ResultPokemon({ keyword }) {
   try {
-    let pokemons = [];
-    for (let i = 1; i < 30; i++) {
-      const pokemon = await getPokemon({ id: i });
-      pokemons.push(pokemon)
-    }
-    
-    const view = pokemons.map((pokemon) => {
-      const name = pokemon.name;
-      const type = pokemon.types[0].type.name;
-      const image = pokemon.sprites.front_default;
-      const url = pokemon.id
+    const pokemon = await getPokemon({ id: keyword });
 
-      return `
+    const name = pokemon.name;
+    const type = pokemon.types[0].type.name;
+    const image = pokemon.sprites.front_default;
+    const url = pokemon.id
+
+    const view = `
       <div class="container_pokemon type_${type}">
       <a href="/#/${url}">
         <h3 class="title_pokemon">${name}</h3>
@@ -28,13 +23,17 @@ async function Home() {
         </a>
       </div>
   `;
-    }).join('');
 
-  return view
+    return view
 
   } catch (error) {
     console.error(error);
+    return `
+    <span class="text__error">
+      Pokemon id or name not found
+    </span>
+    `
   }
 }
 
-export default Home;
+export default ResultPokemon;
