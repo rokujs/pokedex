@@ -1,5 +1,5 @@
 function Header() {
-  const view = `<h1 class="header__title">Pokedex</h1>`;
+  const view = `<h1 class="header__title"><a href="/#/">Pokedex</a></h1>`;
   return view;
 }
 

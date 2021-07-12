@@ -1,3 +1,24 @@
+:root {
+  --main-type-fire: #f25c05;
+  --main-type-normal: #e8c271;
+  --main-type-water: #05898f;
+  --main-type-grass: #94bf36;
+  --main-type-electric: #f2e205;
+  --main-type-ice: #5c8ef2;
+  --main-type-fighting: #8c0404;
+  --main-type-poison: #9a359e;
+  --main-type-ground: #7e582e;
+  --main-type-flying: #73d99f;
+  --main-type-psychic: #191919;
+  --main-type-bug: #f2e85e;
+  --main-type-rock: #40312c;
+  --main-type-ghost: #3b7d8c;
+  --main-type-dark: #0a2473;
+  --main-type-dragon: #bf3f34;
+  --main-type-steel: #202833;
+  --main-type-fairy: #bcbf56;
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
@@ -18,6 +39,10 @@ body {
 
 .header__title {
   font-size: 6rem;
+}
+
+.header__title a {
+  text-decoration: none;
   color: black;
 }
 
@@ -132,118 +157,208 @@ body {
   padding: 1rem;
 }
 
+.pokemon {
+  grid-column: 3 / 8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr;
+  padding: 2rem;
+  border-radius: 1rem;
+  height: 55vh;
+}
+
+.pokemon__title {
+  grid-column: 1 / 2;
+  grid-row: 1/2;
+  font-size: 4rem;
+  margin: 0;
+  text-align: center;
+}
+
+.pokemon__image {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: inline-block;
+}
+
+.pokemon__image > img {
+  height: 40vh;
+}
+
+.pokemon__description {
+  display: flex;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  font-size: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  flex-direction: row;
+}
+
+.pokemon__description_light {
+  color: #eee;
+}
+
+.pokemon__description_dark {
+  color: #666;
+}
+
+.pokemon__description > div > span {
+  display: inline-block;
+  font-size: 2.6rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.pokemon__description--type {
+  background-color: #eeeeee5b;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  min-width: 49%;
+  max-width: 60%;
+}
+
+.pokemon__description--stats {
+  background-color: #eeeeee5b;
+  border-radius: 2rem;
+  width: 100%;
+  padding: 3rem;
+}
+
+/* .type__list {
+
+}
+
+.abilities__list {
+
+}
+
+.stats__list {
+
+} */
+
+.stats__list > li {
+  margin: 0.5rem 0;
+}
+
+.stats__list > li > span {
+  font-weight: bold;
+}
+
 .type_pokemon {
   font-size: 1.6rem;
 }
 
 .type_fire {
-  background-color: #f25c05;
+  background-color: var(--main-type-fire);
 }
 .type_normal {
-  background-color: #e8c271;
+  background-color: var(--main-type-normal);
 }
 .type_water {
-  background-color: #05898f;
+  background-color: var(--main-type-water);
 }
 .type_grass {
-  background-color: #94bf36;
+  background-color: var(--main-type-grass);
 }
 .type_electric {
-  background-color: #f2e205;
+  background-color: var(--main-type-electric);
 }
 .type_ice {
-  background-color: #5c8ef2;
+  background-color: var(--main-type-ice);
 }
 .type_fighting {
-  background-color: #8c0404;
+  background-color: var(--main-type-fighting);
 }
 .type_poison {
-  background-color: #9a359e;
+  background-color: var(--main-type-poison);
 }
 .type_ground {
-  background-color: #7e582e;
+  background-color: var(--main-type-ground);
 }
 .type_flying {
-  background-color: #73d99f;
+  background-color: var(--main-type-flying);
 }
 .type_psychic {
-  background-color: #191919;
+  background-color: var(--main-type-psychic);
 }
 .type_bug {
-  background-color: #f2e85e;
+  background-color: var(--main-type-bug);
 }
 .type_rock {
-  background-color: #40312c;
+  background-color: var(--main-type-rock);
 }
 .type_ghost {
-  background-color: #3b7d8c;
+  background-color: var(--main-type-ghost);
 }
 .type_dark {
-  background-color: #0a2473;
+  background-color: var(--main-type-dark);
 }
 .type_dragon {
-  background-color: #bf3f34;
+  background-color: var(--main-type-dragon);
 }
 .type_steel {
-  background-color: #202833;
+  background-color: var(--main-type-steel);
 }
 .type_fairy {
-  background-color: #bcbf56;
+  background-color: var(--main-type-fairy);
 }
 
 /* hover of pokemon image */
 
 .container_pokemon:hover .img_fire {
-  filter: drop-shadow(0 0 0.8rem#f25c05);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-fire));
 }
 .container_pokemon:hover .img_normal {
-  filter: drop-shadow(0 0 0.8rem#e8c271);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-normal));
 }
 .container_pokemon:hover .img_water {
-  filter: drop-shadow(0 0 0.8rem#05898f);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-water));
 }
 .container_pokemon:hover .img_grass {
-  filter: drop-shadow(0 0 0.8rem#94bf36);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-grass));
 }
 .container_pokemon:hover .img_electric {
-  filter: drop-shadow(0 0 0.8rem#f2e205);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-electric));
 }
 .container_pokemon:hover .img_ice {
-  filter: drop-shadow(0 0 0.8rem#5c8ef2);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-ice));
 }
 .container_pokemon:hover .img_fighting {
-  filter: drop-shadow(0 0 0.8rem#8c0404);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-fighting));
 }
 .container_pokemon:hover .img_poison {
-  filter: drop-shadow(0 0 0.8rem#9a359e);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-poison));
 }
 .container_pokemon:hover .img_ground {
-  filter: drop-shadow(0 0 0.8rem#7e582e);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-ground));
 }
 .container_pokemon:hover .img_flying {
-  filter: drop-shadow(0 0 0.8rem#73d99f);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-flying));
 }
 .container_pokemon:hover .img_psychic {
-  filter: drop-shadow(0 0 0.8rem#191919);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-psychic));
 }
 .container_pokemon:hover .img_bug {
-  filter: drop-shadow(0 0 0.8rem#f2e85e);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-bug));
 }
 .container_pokemon:hover .img_rock {
-  filter: drop-shadow(0 0 0.8rem#40312c);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-rock));
 }
 .container_pokemon:hover .img_ghost {
-  filter: drop-shadow(0 0 0.8rem#3b7d8c);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-ghost));
 }
 .container_pokemon:hover .img_dark {
-  filter: drop-shadow(0 0 0.8rem#0a2473);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-dark));
 }
 .container_pokemon:hover .img_dragon {
-  filter: drop-shadow(0 0 0.8rem#bf3f34);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-dragon));
 }
 .container_pokemon:hover .img_steel {
-  filter: drop-shadow(0 0 0.8rem#202833);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-steel));
 }
 .container_pokemon:hover .img_fairy {
-  filter: drop-shadow(0 0 0.8rem#bcbf56);
+  filter: drop-shadow(0 0 0.8rem var(--main-type-fairy));
 }

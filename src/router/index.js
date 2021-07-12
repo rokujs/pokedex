@@ -11,22 +11,24 @@ import resolveRoutes from "../services/resolveRoutes";
 
 let keyword = ''
 
+const form = null || document.getElementById("form");
+const header = null || document.getElementById("header");
+const main = null || document.getElementById("Main");
+const results = null || document.getElementById("results");
+
 const routes = {
   "/": Home,
   "/:id": Pokemon,
 };
 
 async function router() {
-  const form = null || document.getElementById("form");
-  const header = null || document.getElementById("header");
-  const main = null || document.getElementById("Main");
-  const results = null || document.getElementById("results");
-
   header.innerHTML = Header();
   form.innerHTML = Form()
+  results.innerHTML = null
 
   const dataForm = null || document.getElementById("dataForm")
   const dataPokemon = null || document.getElementById("dataPokemon")
+
 
   dataForm.onsubmit = Search
   dataPokemon.onchange = (evt) => handleChange(evt)
@@ -35,7 +37,7 @@ async function router() {
   const route = await resolveRoutes(hash);
   const render = routes[route] ? routes[route] : ErrorPage;
 
-  main.innerHTML += await render();
+  main.innerHTML = await render();
 }
 
 export default router;
