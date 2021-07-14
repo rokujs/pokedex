@@ -1,36 +1,15 @@
 import getPokemon from "../services/getPokemon";
+import nearScreen from "../services/nearScreen";
+import CreatePokemon from '../components/CreatePokemon'
 
 async function Home() {
   try {
-    let pokemons = [];
-    for (let i = 1; i < 30; i++) {
-      const pokemon = await getPokemon({ id: i });
-      pokemons.push(pokemon)
-    }
-    
-    const view = pokemons.map((pokemon) => {
-      const name = pokemon.name;
-      const type = pokemon.types[0].type.name;
-      const image = pokemon.sprites.front_default;
-      const url = pokemon.id
+    const pokemons = await getPokemon({});
 
-      return `
-      <div class="container_pokemon type_${type}">
-      <a href="/#/${url}">
-        <h3 class="title_pokemon">${name}</h3>
-        <div class="container_img">
-          <img src="${image}" class="img_${type}">
-        </div>
-        <div class="description_pokemon">
-        <span class="type_pokemon"><b>Type: </b></span><span class="type_pokemon" id="type">${type}
-        </span>
-        </div>
-        </a>
-      </div>
-  `;
-    }).join('');
+    const view = CreatePokemon({ list: pokemons })
+    nearScreen({ index: 0 })
 
-  return view
+    return view
 
   } catch (error) {
     console.error(error);
