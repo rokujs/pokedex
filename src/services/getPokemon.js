@@ -1,8 +1,7 @@
 import { API } from './setting'
 
-async function getPokemon({ indexPage = 0, limit=10 }) {
-  const offset = indexPage 
-  console.log(limit);
+async function getPokemon({ indexPage = 0, limit = 10 }) {
+  const offset = indexPage
   try {
     const response = await fetch(`${API}/pokemon/?limit=${limit}&offset=${offset}/`);
     const data = await response.json();

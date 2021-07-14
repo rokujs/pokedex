@@ -1,5 +1,5 @@
 import getHash from '../services/getHash'
-import getPokemon from '../services/getPokemon'
+import { getOnePokemon } from '../services/getPokemon'
 
 const TYPES_BACKGROUND_LIGHT = {
   'electric': true,
@@ -12,8 +12,7 @@ const TYPES_BACKGROUND_LIGHT = {
 async function Pokemon() {
   try {
     const id = getHash()
-    const pokemon = await getPokemon({ id });
-    console.log(pokemon);
+    const pokemon = await getOnePokemon({ id });
 
     const name = pokemon.name;
     const type = pokemon.types[0].type.name;

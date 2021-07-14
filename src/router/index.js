@@ -15,6 +15,7 @@ const form = null || document.getElementById("form");
 const header = null || document.getElementById("header");
 const main = null || document.getElementById("Main");
 const results = null || document.getElementById("results");
+const viewPoint = null || document.getElementById('viewport')
 
 const routes = {
   "/": Home,
@@ -38,6 +39,7 @@ async function router() {
   const render = routes[route] ? routes[route] : ErrorPage;
 
   main.innerHTML = await render();
+  viewPoint.style.display = routes[route] === Home ? "block" : 'none'
 }
 
 export default router;

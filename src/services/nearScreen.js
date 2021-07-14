@@ -17,11 +17,11 @@ function NearScreen({ distance = '100px', index = 0 }) {
 
 async function morePokemon() {
   const home = document.getElementById('Main')
+  console.log(indexPage);
 
   indexPage += 10
   const pokemon = await getPokemon({ indexPage })
   const pokemons = CreatePokemon({ list: pokemon })
-  console.log(pokemon);
 
   home.innerHTML += pokemons
 }
