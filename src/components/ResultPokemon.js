@@ -2,6 +2,7 @@ import { getOnePokemon } from "../services/getPokemon";
 import CreatePokemon from '../components/CreatePokemon'
 
 async function ResultPokemon({ keyword }) {
+  keyword = keyword.toLowerCase()
   try {
     let pokemon = []
     pokemon[0] = await getOnePokemon({ id: keyword });

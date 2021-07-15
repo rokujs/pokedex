@@ -38,8 +38,12 @@ async function router() {
   const route = await resolveRoutes(hash);
   const render = routes[route] ? routes[route] : ErrorPage;
 
+  console.log(route);
+
   main.innerHTML = await render();
-  viewPoint.style.display = routes[route] === Home ? "block" : 'none'
+
+  main.className = route === '/' ? 'container' : null
+  viewPoint.style.display = route === '/' ? "block" : 'none'
 }
 
 export default router;

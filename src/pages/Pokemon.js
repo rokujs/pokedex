@@ -1,5 +1,6 @@
 import getHash from '../services/getHash'
 import { getOnePokemon } from '../services/getPokemon'
+import Evolution from '../components/Evolution'
 
 const TYPES_BACKGROUND_LIGHT = {
   'electric': true,
@@ -13,6 +14,7 @@ async function Pokemon() {
   try {
     const id = getHash()
     const pokemon = await getOnePokemon({ id });
+    const evolution = await Evolution({ id })
 
     const name = pokemon.name;
     const type = pokemon.types[0].type.name;
@@ -46,6 +48,7 @@ async function Pokemon() {
         </div>
       </div>
     </div>
+    ${evolution}
 `;
 
     return view
