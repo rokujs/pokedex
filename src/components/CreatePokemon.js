@@ -8,7 +8,7 @@ function CreatePokemon({ list }) {
 
     return `
     <div class="container_pokemon type_${type}">
-    <a href="/#/${url}">
+    <a href="#/${url}">
       <h3 class="title_pokemon">${name}</h3>
       <div class="container_img">
         <img src="${image}" class="img_${type}">
